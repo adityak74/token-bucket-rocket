@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  redis:
+  redisserver:
     image: redis
     networks:
     - deployml_network
@@ -17,7 +17,7 @@ services:
     networks:
     - deployml_network
     depends_on:
-    - redis
+    - redisserver
     env_file:
     - .env
     volumes:
