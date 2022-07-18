@@ -14,7 +14,6 @@ pub trait RedisClient {
 impl RedisClient for RedisClientInterface {
     fn init() -> RedisClientInterface {
         dotenv().ok();
-        println!("baf!");
         let redis_host = env::var("REDIS_HOST")
             .expect("REDIS_HOST must be set");
         let formatted_redis_url = format!("redis://{}", redis_host);
